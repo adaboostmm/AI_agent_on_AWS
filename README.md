@@ -1,4 +1,5 @@
 # Generative AI on Amazon SageMaker and Amazon Bedrock
+##  Note: All materials are from Amazon Web Services workshops.
 
 This repository provides comprehensive resources for working with generative AI models using Amazon SageMaker and Amazon Bedrock. 
 --fine-tune foundation models, 
@@ -35,7 +36,6 @@ This repository provides comprehensive resources for working with generative AI 
 - Implement responsible AI with Bedrock Guardrails
 - Develop FMOps fine-tuning workflows with SageMaker Pipelines
 
-###  Note: All materials are from Amazon Web Services workshops.
 # AI agent on Amazon Web Services
 Harness the power of LLM and create autonomous AI agents on AWS.
 An AI agent is a software programme that interacts with its environment to collect data and use the data to perform tasks to meet predetermined goals.
