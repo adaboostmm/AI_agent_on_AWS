@@ -1,14 +1,12 @@
 # Generative AI on Amazon SageMaker and Amazon Bedrock
 ##  Note: All materials are from Amazon Web Services workshops.
 
+https://aws.amazon.com/blogs/opensource/introducing-strands-agents-an-open-source-ai-agents-sdk/
+
 This repository provides comprehensive resources for working with generative AI models using Amazon SageMaker and Amazon Bedrock. 
 --fine-tune foundation models, 
 --build RAG applications, create agents, or 
 --implement responsible AI practices
-
-## Repository Structure
-
-### Workshops
 
 #### [Building RAG Workflows with SageMaker and Bedrock](./workshops/building-rag-workflows-with-sagemaker-and-bedrock/)
 - Build experimental RAG applications
