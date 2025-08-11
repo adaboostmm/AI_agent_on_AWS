@@ -1,0 +1,463 @@
+*****************************
+lesson-1 OUTPUT
+*****************************
+
+1. PS D:\Users\minakshi.mukherjee\mcp> git clone https://github.com/kashodiya/learn-mcp.git
+---------------------------------------------------------------------
+Cloning into 'learn-mcp'...
+remote: Enumerating objects: 82, done.
+remote: Counting objects: 100% (82/82), done.
+remote: Compressing objects: 100% (63/63), done.
+remote: Total 82 (delta 32), reused 61 (delta 14), pack-reused 0 (from 0)
+Receiving objects: 100% (82/82), 549.90 KiB | 3.33 MiB/s, done.
+Resolving deltas: 100% (32/32), done.
+PS D:\Users\minakshi.mukherjee\mcp> 
+
+
+2. uv installation
+-----------------------------------------
+Go to Visual Studio Powershell
+
+PS D:\Users\minakshi.mukherjee> powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+Downloading uv 0.8.8 (x86_64-pc-windows-msvc)
+Installing to D:\Users\minakshi.mukherjee\.local\bin                                                                                                           
+  uv.exe                                                                                                                                                       
+  uvx.exe                                                                                                                                                      
+  uvw.exe                                                                                                                                                      
+everything's installed!                                                                                                                                        
+
+To add D:\Users\minakshi.mukherjee\.local\bin to your PATH, either restart your shell or run:
+
+    set Path=D:\Users\minakshi.mukherjee\.local\bin;%Path%   (cmd)
+    $env:Path = "D:\Users\minakshi.mukherjee\.local\bin;$env:Path"   (powershell)
+
+-------------------------------------------------------------------
+PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-1> $env:Path = "D:\Users\minakshi.mukherjee\.local\bin;$env:Path"
+-----------------------------------------------------------
+PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-1> uv sync
+Using CPython 3.12.11
+Creating virtual environment at: .venv
+Resolved 47 packages in 5ms
+      Built pyperclip==1.9.0
+Prepared 46 packages in 1m 19s
+Installed 46 packages in 11.31s
+ + annotated-types==0.7.0
+ + anyio==4.9.0
+ + attrs==25.3.0
+ + authlib==1.6.0
+ + certifi==2025.7.14
+ + cffi==1.17.1
+ + click==8.2.1
+ + colorama==0.4.6
+ + cryptography==45.0.5
+ + cyclopts==3.22.2
+ + dnspython==2.7.0
+ + docstring-parser==0.16
+ + docutils==0.21.2
+ + email-validator==2.2.0
+ + exceptiongroup==1.3.0
+ + fastmcp==2.10.5
+ + h11==0.16.0
+ + httpcore==1.0.9
+ + httpx==0.28.1
+ + httpx-sse==0.4.1
+ + idna==3.10
+ + jsonschema==4.25.0
+ + jsonschema-specifications==2025.4.1
+ + markdown-it-py==3.0.0
+ + mcp==1.12.0
+ + mdurl==0.1.2
+ + openapi-pydantic==0.5.1
+ + pycparser==2.22
+ + pydantic==2.11.7
+ + pydantic-core==2.33.2
+ + pydantic-settings==2.10.1
+ + pygments==2.19.2
+ + pyperclip==1.9.0
+ + python-dotenv==1.1.1
+ + python-multipart==0.0.20
+ + pywin32==311
+ + referencing==0.36.2
+ + rich==14.0.0
+ + rich-rst==1.3.1
+ + rpds-py==0.26.0
+ + sniffio==1.3.1
+ + sse-starlette==2.4.1
+ + starlette==0.47.1
+ + typing-extensions==4.14.1
+ + typing-inspection==0.4.1
+ + uvicorn==0.35.0
+--------------------------------------------------
+$ uv run server.py
+ server.py:1448INFO:     Started server process [8456]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)       
+INFO:     127.0.0.1:55681 - "GET /sse/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55686 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55712 - "GET /sse HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55712 - "GET /sse/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55714 - "POST /messages/?session_id=4951148d8fca4d54b4db6c6e90874fe7 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:55714 - "POST /messages/?session_id=4951148d8fca4d54b4db6c6e90874fe7 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:55714 - "POST /messages/?session_id=4951148d8fca4d54b4db6c6e90874fe7 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:55714 - "POST /messages/?session_id=4951148d8fca4d54b4db6c6e90874fe7 HTTP/1.1" 202 Accepted
+---------------------------------------------------------------
+$ uv run client.py
+PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-1> uv run client.py         
+Available tools:
+[Tool(name='add', title=None, description='Add two numbers', inputSchema={'properties': {'a': {'title': 'A', 'type': 'integer'}, 'b': {'title': 'B', 'type': 'integer'}}, 'required': ['a', 'b'], 'type': 'object'}, outputSchema={'properties': {'result': {'title': 'Result', 'type': 'integer'}}, 'required': ['result'], 'title': '_WrappedResult', 'type': 'object', 'x-fastmcp-wrap-result': True}, annotations=None, meta=None)]
+
+Calling tool: ("add", {"a": 5, "b": 3})
+
+Result:
+CallToolResult(content=[TextContent(type='text', text='8', annotations=None, meta=None)],
+               structured_content={'result': 8},
+               data=8,
+               is_error=False)
+
+***********************************
+
+output from     
+🖥️ Server name:     Demo 🚀
+📦 Transport:       SSE
+🔗 Server URL:      http://127.0.0.1:8000/sse/
+
+---------------------------
+
+event: endpoint
+data: /messages/?session_id=388b678967a4467d80853d9f4ea6759f
+
+: ping - 2025-08-11 04:50:48.236637+00:00
+
+: ping - 2025-08-11 04:51:03.251780+00:00
+
+: ping - 2025-08-11 04:51:18.262455+00:00
+
+: ping - 2025-08-11 04:51:33.262166+00:00
+
+: ping - 2025-08-11 04:51:48.250968+00:00
+
+: ping - 2025-08-11 04:52:03.254784+00:00
+
+: ping - 2025-08-11 04:52:18.263054+00:00
+-----------------------------------------------------
+
+*****************************
+lesson-2 OUTPUT
+*****************************
+
+check "aws configure list" provides correct information.
+Otherwise follow this:
+https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html
+
+
+PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-2> uv sync
+-----------------------------------------------------------------
+Using CPython 3.12.11
+Creating virtual environment at: .venv
+Resolved 75 packages in 73ms
+Prepared 28 packages in 1m 00s
+Installed 74 packages in 12.02s
+ + annotated-types==0.7.0
+ + anyio==4.9.0
+ + attrs==25.3.0
+ + authlib==1.6.0
+ + boto3==1.39.9
+ + botocore==1.39.9
+ + certifi==2025.7.14
+ + cffi==1.17.1
+ + charset-normalizer==3.4.2
+ + click==8.2.1
+ + colorama==0.4.6
+ + cryptography==45.0.5
+ + cyclopts==3.22.2
+ + dnspython==2.7.0
+ + docstring-parser==0.16
+ + docutils==0.21.2
+ + email-validator==2.2.0
+ + exceptiongroup==1.3.0
+ + fastmcp==2.10.5
+ + h11==0.16.0
+ + httpcore==1.0.9
+ + httpx==0.28.1
+ + httpx-sse==0.4.1
+ + idna==3.10
+ + jmespath==1.0.1
+ + jsonpatch==1.33
+ + jsonpointer==3.0.0
+ + jsonschema==4.25.0
+ + jsonschema-specifications==2025.4.1
+ + langchain-aws==0.2.28
+ + langchain-core==0.3.69
+ + langchain-mcp-adapters==0.1.9
+ + langgraph==0.5.3
+ + langgraph-checkpoint==2.1.1
+ + langgraph-prebuilt==0.5.2
+ + langgraph-sdk==0.1.73
+ + langsmith==0.4.8
+ + markdown-it-py==3.0.0
+ + mcp==1.12.0
+ + mdurl==0.1.2
+ + numpy==2.3.1
+ + openapi-pydantic==0.5.1
+ + orjson==3.11.0
+ + ormsgpack==1.10.0
+ + packaging==25.0
+ + pycparser==2.22
+ + pydantic==2.11.7
+ + pydantic-core==2.33.2
+ + pydantic-settings==2.10.1
+ + pygments==2.19.2
+ + pyperclip==1.9.0
+ + python-dateutil==2.9.0.post0
+ + python-dotenv==1.1.1
+ + python-multipart==0.0.20
+ + pywin32==311
+ + pyyaml==6.0.2
+ + referencing==0.36.2
+ + requests==2.32.4
+ + requests-toolbelt==1.0.0
+ + rich==14.0.0
+ + rich-rst==1.3.1
+ + rpds-py==0.26.0
+ + s3transfer==0.13.1
+ + six==1.17.0
+ + sniffio==1.3.1
+ + sse-starlette==2.4.1
+ + starlette==0.47.1
+ + tenacity==9.1.2
+ + typing-extensions==4.14.1
+ + typing-inspection==0.4.1
+ + urllib3==2.5.0
+ + uvicorn==0.35.0
+ + xxhash==3.5.0
+ + zstandard==0.23.0
+-------------------------------------------------------------------------------
+PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-2> uv run server.py
+
+
+╭─ FastMCP 2.0 ──────────────────────────────────────────────────────────────╮  
+│                                                                            │  
+│        _ __ ___ ______           __  __  _____________    ____    ____     │  
+│       _ __ ___ / ____/___ ______/ /_/  |/  / ____/ __ \  |___ \  / __ \    │  
+│      _ __ ___ / /_  / __ `/ ___/ __/ /|_/ / /   / /_/ /  ___/ / / / / /    │  
+│     _ __ ___ / __/ / /_/ (__  ) /_/ /  / / /___/ ____/  /  __/_/ /_/ /     │  
+│    _ __ ___ /_/    \__,_/____/\__/_/  /_/\____/_/      /_____(_)____/      │  
+│                                                                            │  
+│                                                                            │  
+│                                                                            │  
+│    🖥️   Server name:     Math                                                │
+│    📦 Transport:       SSE                                                 │  
+│    🔗 Server URL:      http://127.0.0.1:8000/sse/                          │  
+│                                                                            │  
+│    📚 Docs:            https://gofastmcp.com                               │  
+│    🚀 Deploy:          https://fastmcp.cloud                               │  
+│                                                                            │  
+│    🏎️   FastMCP version: 2.10.5                                              │
+│    🤝 MCP version:     1.12.0                                              │  
+│                                                                            │  
+╰────────────────────────────────────────────────────────────────────────────╯  
+
+
+[08/10/25 22:45:51] INFO     Starting MCP server 'Math' with      server.py:1448                             
+transport 'sse' on http://127.0.0.1:8000/sse/
+INFO:     Started server process [420]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)  
+
+***********************************************
+
+PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-2> uv run client.py
+{'messages': [HumanMessage(content="what's (3 + 5) x 12?", additional_kwargs={}, response_metadata={}, id='d21c5ce2-0c48-476a-b8ac-0e1213715cac'),
+              AIMessage(content="I'll solve this step by step using the available tools.\n\nFirst, I need to calculate 3 + 5, and then multiply the result by 12.", additional_kwargs={'usage': {'prompt_tokens': 458, 'completion_tokens': 104, 'cache_read_input_tokens': 0, 'cache_write_input_tokens': 0, 'total_tokens': 562}, 'stop_reason': 'tool_use', 'thinking': {}, 'model_id': 'us.anthropic.claude-3-7-sonnet-20250219-v1:0', 'model_name': 'us.anthropic.claude-3-7-sonnet-20250219-v1:0'}, response_metadata={'usage': {'prompt_tokens': 458, 'completion_tokens': 104, 'cache_read_input_tokens': 0, 'cache_write_input_tokens': 0, 'total_tokens': 562}, 'stop_reason': 'tool_use', 'thinking': {}, 'model_id': 'us.anthropic.claude-3-7-sonnet-20250219-v1:0', 'model_name': 'us.anthropic.claude-3-7-sonnet-20250219-v1:0'}, id='run--add824ba-e8e1-4df7-a5a2-c1d7a3759823-0', tool_calls=[{'name': 'add', 'args': {'a': 3, 'b': 5}, 'id': 'toolu_bdrk_01DC4Q2UFzccrMTJ7BUyiEye', 'type': 'tool_call'}], usage_metadata={'input_tokens': 458, 'output_tokens': 104, 'total_tokens': 562, 'input_token_details': {'cache_creation': 0, 'cache_read': 0}}),
+              ToolMessage(content='8', name='add', id='76b69621-968a-493e-a138-5acd5f579cfd', tool_call_id='toolu_bdrk_01DC4Q2UFzccrMTJ7BUyiEye'),
+              AIMessage(content="Now I'll multiply this result (8) by 12:", additional_kwargs={'usage': {'prompt_tokens': 574, 'completion_tokens': 83, 'cache_read_input_tokens': 0, 'cache_write_input_tokens': 0, 'total_tokens': 657}, 'stop_reason': 'tool_use', 'thinking': {}, 'model_id': 'us.anthropic.claude-3-7-sonnet-20250219-v1:0', 'model_name': 'us.anthropic.claude-3-7-sonnet-20250219-v1:0'}, response_metadata={'usage': {'prompt_tokens': 574, 'completion_tokens': 83, 'cache_read_input_tokens': 0, 'cache_write_input_tokens': 0, 'total_tokens': 657}, 'stop_reason': 'tool_use', 'thinking': {}, 'model_id': 'us.anthropic.claude-3-7-sonnet-20250219-v1:0', 'model_name': 'us.anthropic.claude-3-7-sonnet-20250219-v1:0'}, id='run--c62af774-18e9-43af-95cf-ab94cbe0f6ce-0', tool_calls=[{'name': 'multiply', 'args': {'a': 8, 'b': 12}, 'id': 'toolu_bdrk_01MZ9YmUV12XDPyEex3sjPbP', 'type': 'tool_call'}], usage_metadata={'input_tokens': 574, 'output_tokens': 83, 'total_tokens': 657, 'input_token_details': {'cache_creation': 0, 'cache_read': 0}}),
+              ToolMessage(content='96', name='multiply', id='116778de-5438-43cb-8262-bdae422931d7', tool_call_id='toolu_bdrk_01MZ9YmUV12XDPyEex3sjPbP'),        
+              AIMessage(content='The answer to (3 + 5) × 12 is 96.', additional_kwargs={'usage': {'prompt_tokens': 669, 'completion_tokens': 22, 'cache_read_input_tokens': 0, 'cache_write_input_tokens': 0, 'total_tokens': 691}, 'stop_reason': 'end_turn', 'thinking': {}, 'model_id': 'us.anthropic.claude-3-7-sonnet-20250219-v1:0', 'model_name': 'us.anthropic.claude-3-7-sonnet-20250219-v1:0'}, response_metadata={'usage': {'prompt_tokens': 669, 'completion_tokens': 22, 'cache_read_input_tokens': 0, 'cache_write_input_tokens': 0, 'total_tokens': 691}, 'stop_reason': 'end_turn', 'thinking': {}, 'model_id': 'us.anthropic.claude-3-7-sonnet-20250219-v1:0', 'model_name': 'us.anthropic.claude-3-7-sonnet-20250219-v1:0'}, id='run--bc3e8315-ae54-4cdf-9c5c-a909b722f1c6-0', usage_metadata={'input_tokens': 669, 'output_tokens': 22, 'total_tokens': 691, 'input_token_details': {'cache_creation': 0, 'cache_read': 0}})]}
+
+
+************************
+lesson-3 output
+************************
+
+PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-3> uv sync
+Using CPython 3.12.11
+Creating virtual environment at: .venv
+Resolved 88 packages in 5ms
+Prepared 36 packages in 1m 15s
+Installed 87 packages in 14.11s
+ + annotated-types==0.7.0
+ + anyio==4.10.0
+ + attrs==25.3.0
+ + authlib==1.6.1
+ + boto3==1.40.5
+ + botocore==1.40.5
+ + certifi==2025.8.3
+ + cffi==1.17.1
+ + charset-normalizer==3.4.2
+ + click==8.2.1
+ + colorama==0.4.6
+ + cryptography==45.0.6
+ + cyclopts==3.22.5
+ + dnspython==2.7.0
+ + docstring-parser==0.17.0
+ + docutils==0.22
+ + email-validator==2.2.0
+ + exceptiongroup==1.3.0
+ + fastapi==0.116.1
+ + fastmcp==2.11.2
+ + h11==0.16.0
+ + httpcore==1.0.9
+ + httpx==0.28.1
+ + httpx-sse==0.4.1
+ + idna==3.10
+ + isodate==0.7.2
+ + jmespath==1.0.1
+ + jsonpatch==1.33
+ + jsonpointer==3.0.0
+ + jsonschema==4.25.0
+ + jsonschema-path==0.3.4
+ + jsonschema-specifications==2025.4.1
+ + langchain-aws==0.2.30
+ + langchain-core==0.3.74
+ + langchain-mcp-adapters==0.1.9
+ + langgraph==0.6.4
+ + langgraph-checkpoint==2.1.1
+ + langgraph-prebuilt==0.6.4
+ + langgraph-sdk==0.2.0
+ + langsmith==0.4.13
+ + lazy-object-proxy==1.11.0
+ + markdown-it-py==3.0.0
+ + markupsafe==3.0.2
+ + mcp==1.12.4
+ + mdurl==0.1.2
+ + more-itertools==10.7.0
+ + numpy==2.3.2
+ + openapi-core==0.19.5
+ + openapi-pydantic==0.5.1
+ + openapi-schema-validator==0.6.3
+ + openapi-spec-validator==0.7.2
+ + orjson==3.11.1
+ + ormsgpack==1.10.0
+ + packaging==25.0
+ + parse==1.20.2
+ + pathable==0.4.4
+ + pycparser==2.22
+ + pydantic==2.11.7
+ + pydantic-core==2.33.2
+ + pydantic-settings==2.10.1
+ + pygments==2.19.2
+ + pyperclip==1.9.0
+ + python-dateutil==2.9.0.post0
+ + python-dotenv==1.1.1
+ + python-multipart==0.0.20
+ + pywin32==311
+ + pyyaml==6.0.2
+ + referencing==0.36.2
+ + requests==2.32.4
+ + requests-toolbelt==1.0.0
+ + rfc3339-validator==0.1.4
+ + rich==14.1.0
+ + rich-rst==1.3.1
+ + rpds-py==0.27.0
+ + s3transfer==0.13.1
+ + six==1.17.0
+ + sniffio==1.3.1
+ + sse-starlette==3.0.2
+ + starlette==0.47.2
+ + tenacity==9.1.2
+ + typing-extensions==4.14.1
+ + typing-inspection==0.4.1
+ + urllib3==2.5.0
+ + uvicorn==0.35.0
+ + werkzeug==3.1.1
+ + xxhash==3.5.0
+ + zstandard==0.23.0
+
+-----------------------------------------
+
+***Fix PowerShell Execution Policy and activate virtual environment.
+
+PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-3> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-3> .\.venv\Scripts\activate 
+
+(lesson-3) PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-3> python generate_schema.py
+Schema documentation generated in SCHEMA.md
+
+(lesson-3) PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-3> python server.py
+
+
+╭─ FastMCP 2.0 ──────────────────────────────────────────────────────────────╮  
+│                                                                            │  
+│        _ __ ___ ______           __  __  _____________    ____    ____     │  
+│       _ __ ___ / ____/___ ______/ /_/  |/  / ____/ __ \  |___ \  / __ \    │  
+│      _ __ ___ / /_  / __ `/ ___/ __/ /|_/ / /   / /_/ /  ___/ / / / / /    │  
+│     _ __ ___ / __/ / /_/ (__  ) /_/ /  / / /___/ ____/  /  __/_/ /_/ /     │  
+│    _ __ ___ /_/    \__,_/____/\__/_/  /_/\____/_/      /_____(_)____/      │  
+│                                                                            │  
+│                                                                            │  
+│                                                                            │  
+│    🖥️   Server name:     SQL Database                                        │
+│    📦 Transport:       SSE                                                 │  
+│    🔗 Server URL:      http://0.0.0.0:50873/sse/                           │  
+│                                                                            │  
+│    📚 Docs:            https://gofastmcp.com                               │  
+│    🚀 Deploy:          https://fastmcp.cloud                               │  
+│                                                                            │  
+│    🏎️   FastMCP version: 2.11.2                                              │
+│    🤝 MCP version:     1.12.4                                              │  
+│                                                                            │  
+╰────────────────────────────────────────────────────────────────────────────╯  
+
+
+[08/11/25 00:54:23] INFO     Starting MCP server 'SQL Database'   server.py:1522  with transport 'sse' on
+                             http://0.0.0.0:50873/sse/
+INFO:     Started server process [6984]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:50873 (Press CTRL+C to quit)  
+
+(lesson-3) PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-3> python client.py
+Asking the agent: What are the top 5 artists with the most albums in the database?
+Here are the top 5 artists with the most albums in the database:
+
+1. Iron Maiden - 21 albums
+2. Led Zeppelin - 14 albums
+3. Deep Purple - 11 albums
+4. Metallica - 10 albums
+5. U2 - 10 albums
+
+As we can see, Iron Maiden has the most albums in the database with 21 albums, followed by Led Zeppelin with 14 albums. Metallica and U2 are tied for the 4th and 5th positions with 10 albums each.
+
+(lesson-3) PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-3> $env:Path = "D:\Users\minakshi.mukherjee\.local\bin;$env:Path"
+(lesson-3) PS D:\Users\minakshi.mukherjee\mcp\learn-mcp\lesson-3> uv run uvicorn app:app --reload
+INFO:     Will watch for changes in these directories: ['D:\\Users\\minakshi.mukherjee\\mcp\\learn-mcp\\lesson-3']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [7456] using StatReload
+INFO:     Started server process [5832]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+
+*******
+
+from the browser
+
+http://localhost:8000/
+
+Ask a Question
+What are the top 5 artists with the most albums in the database?
+Submit
+
+Answer:
+
+Here are the top 5 artists with the most albums in the database:
+
+1. Iron Maiden - 21 albums
+2. Led Zeppelin - 14 albums
+3. Deep Purple - 11 albums
+4. Metallica - 10 albums
+5. U2 - 10 albums
+
+Iron Maiden has the highest number of albums in the database with 21 albums, followed by Led Zeppelin with 14 albums. Metallica and U2 are tied for fourth place with 10 albums each.
+
